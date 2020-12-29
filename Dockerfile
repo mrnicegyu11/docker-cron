@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM jrottenberg/ffmpeg:4.1-ubuntu
 MAINTAINER docker@ekito.fr
 
 # Add crontab file in the cron directory
