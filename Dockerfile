@@ -13,11 +13,11 @@ RUN touch /var/log/cron.log
 #Install Cron
 # fix via https://stackoverflow.com/questions/44184661/set-dns-options-during-docker-build/48326305
 RUN echo "nameserver 208.67.222.222" > /etc/resolv.conf && \ 
-    echo "search opendns.com" >> /etc/resolv.conf && \    
+    echo "search opendns.com" >> /etc/resolv.conf && echo "..." &&\    
 	apt-get update
 RUN echo "nameserver 208.67.222.222" > /etc/resolv.conf && \ 
     echo "search opendns.com" >> /etc/resolv.conf && \    
-	apt-get -y install python3 vim 
+	apt-get -y --fix-missing install imagemagick python3 vim
 # Compile and install fresh ffmpeg from sources:
 # See: https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
 # via https://stackoverflow.com/questions/53944487/how-to-install-ffmpeg-in-a-docker-container
